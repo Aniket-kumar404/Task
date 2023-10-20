@@ -16,10 +16,12 @@ Setup Commands:
 Clone this repository
 
 1. Clone this project using https://github.com/Aniket-kumar404/Task.git
-2. After installation
-      Check whether the python is installed or not
+2. After installation:
+   
+      Check whether the python is installed or not:
                Command:  Python --Version
-      Install
+   
+      Install:
      pip install requirements.txt             
      
    
