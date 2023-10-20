@@ -1,0 +1,106 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Pdf Converter</title>
+    <style>
+      
+        .box{
+            position: relative;
+            left: 10%;
+            top:10%;
+       
+    
+            
+        }
+        .box .sub_div{
+            float: left;
+            width: 40%;
+            /* border-style: solid; */
+        } 
+
+    </style>
+</head>
+
+<body>
+    <h1 style="text-align: center;">Pdf Converter</h1>
+    <div class="main">
+    <div class="box">
+        <br><br>
+        <div class="sub_div"> 
+            <h3>Merge Pdf</h3>
+            <br><br>
+            <form action="combineTwopdf" method="post" enctype="multipart/form-data">{% csrf_token %}
+                <input type="file" name="pdf" /><br><br>
+                <input type="file" name="pdf2" />
+                <input type="submit" value="Upload" />
+            </form>
+    
+        
+        </div>
+        <br><br>
+        <div class="sub_div"> 
+            <h3> Extract all text from pdf file to TXT file </h3>
+            
+            <form action="extractall" method="post" enctype="multipart/form-data">{% csrf_token %}
+                <input type="file" name="pdf" />
+                <input type="submit" value="Upload" />
+            </form>
+    
+        </div>
+        <br><br>
+        <div class="sub_div"> 
+            <h3>Remove password from pdf</h3>
+            <form action="removepdf" method="post" enctype="multipart/form-data">{% csrf_token %}
+                <input type="file" name="pdf" />
+                <input type="submit" value="Upload" />
+            </form>
+    
+        </div>
+        <br><br>
+        <div class="sub_div">
+            <h3>Separate PDF pages</h3>
+            <form action="separate" method="post" enctype="multipart/form-data">{% csrf_token %}
+                <input type="file" name="pdf" />
+                <input type="submit" value="Upload" />
+            </form>
+    
+        </div>
+        <br><br>
+        <div class="sub_div">
+            <h3>Convert images into pdf JPG,TIFF and PNG</h3>
+            <form action="convert" method="post" enctype="multipart/form-data">{% csrf_token %}
+                <input type="file" name="pdf" />
+                <input type="submit" value="Upload" />
+            </form>
+    
+        </div>
+        <br><br>
+
+
+    </div>
+    </div>
+
+
+    <!-- <div id="register">
+        <form action="signup" method="POST">
+            {% csrf_token %}
+            <label id="invalid" style="color:red; visibility:hidden; "> Password must be same</label>
+            <br><br> FirstName:<input type="text" name="firstName" autocomplete="off">
+            <br><br> LastName:<input type="text" name="lastName" autocomplete="off">
+            <br><br> UserName:<input type="text" name="username" autocomplete="off" required>
+            <br><br> Email: <input type="text" name="email" autocomplete="off" required>
+            <br><br> Password:<input type="password" id="pass" name="password1" autocomplete="off" required>
+
+            <br><br> Confirm Password:<input type="password" id="cpass" name="password2" autocomplete="off" required>
+            <br><br>
+
+            <input type="submit" value="create">
+        </form>
+
+
+    </div> -->
+</body>
+
+</html>
